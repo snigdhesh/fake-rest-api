@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: dummy
+    username: dummy
+    password: dummy
+  jpa:
+    hibernate:
+      ddl-auto: update
