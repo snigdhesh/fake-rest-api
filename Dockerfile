@@ -1,14 +1,14 @@
 # Use an official OpenJDK runtime as the base image
-FROM openjdk:17-alpine
+FROM openjdk
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the Maven project files to the container
-COPY . .
+# Copy the packaged Spring Boot application JAR file into the container
+COPY target/fake-rest-api-0.0.1-SNAPSHOT.jar /app
 
-# Build the Maven project to generate the JAR file
-RUN /app/mvnw package -DskipTests
+# Expose port 8080 to the outside world
+EXPOSE 8080
 
 # Command to run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "target/fake-rest-api-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "fake-rest-api-0.0.1-SNAPSHOT.jar"]
