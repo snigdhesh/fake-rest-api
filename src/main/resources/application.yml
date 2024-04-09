@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: dummy
-    username: dummy
-    password: dummy
+    url: jdbc:mysql://mysql:3306/sandbox
+    username: mysql_user
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
