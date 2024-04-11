@@ -2,5 +2,6 @@
 
 This is a fake rest API
 
-Images from
-https://pngtree.com/
+`data.sql` and `schema.sql` under
+`src/main/resources` can be enabled.
+These sql files are to initialize table with sample data
