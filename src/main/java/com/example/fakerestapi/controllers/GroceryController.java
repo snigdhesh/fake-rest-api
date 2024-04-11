@@ -2,15 +2,12 @@ package com.example.fakerestapi.controllers;
 
 import com.example.fakerestapi.entities.Grocery;
 import com.example.fakerestapi.services.GroceryService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@Validated
 public class GroceryController {
 
     @Autowired
@@ -22,12 +19,12 @@ public class GroceryController {
     }
 
     @PostMapping(value = "/groceries",consumes = "application/json")
-    public Grocery createNewGrocery(@RequestBody @Valid Grocery grocery){
+    public Grocery createNewGrocery(@RequestBody Grocery grocery){
         return groceryService.upsertGrocery(grocery);
     }
 
     @PutMapping(value = "/groceries",consumes = "application/json")
-    public Grocery updateGrocery(@RequestBody @Valid Grocery grocery){
+    public Grocery updateGrocery(@RequestBody Grocery grocery){
         return groceryService.upsertGrocery(grocery);
     }
 
